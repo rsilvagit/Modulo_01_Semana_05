@@ -17,17 +17,21 @@ namespace M1S3_SistemaBanco
         {
         }
         public PessoaFisica(string nome, string cpf, string email, string telefone,
-                       string end, DateTime dtNascimento, int numeroConta) : base(email,telefone,end,numeroConta)
-    {
-        Nome = nome;
-        CPF = cpf;
-        DataNascimento = dtNascimento;
+                       string endereco, DateTime dtNascimento, int numeroConta) : base(email,telefone,endereco,numeroConta)
+        {
+            Nome = nome;
+            CPF = cpf;
+            DataNascimento = dtNascimento;
 
-    }
+        }
         public bool EhMaior()
         {
             return Idade >= 18;
         }
+        public override string ResumoCliente()
+        {
+            return $"{base.ResumoCliente()} | {Nome} | {CPF}";
+        }
     }
-    
+
 }
